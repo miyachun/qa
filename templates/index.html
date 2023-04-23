@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Q&A</title>
+</head> 
+<body>
+    <h1>輸入檔案，AI回應相關問題</h1>
+    <form method="post" enctype="multipart/form-data">
+        <label for="title">選擇檔案</label>
+        <input type="file" name="myfile" id="myfile"><br>   
+       
+        <br>
+
+        <label for="content">內容</label>
+        <br>  
+        <textarea name="content"
+                  placeholder="Post content"
+                  rows="15"
+                  cols="60"
+                  >{{ content }}</textarea>        
+
+        <button type="submit">Submit</button>
+    </form>
+    <br>
+    <form method="post" >
+        <label for="title">輸入問題:</label>
+        <input type="text" id="myqq" name="myqq" 
+       minlength="4" maxlength="20" size="20">
+       <br>
+       {{ request.form['myqq'] }}
+       <br>
+       <br>
+       <label for="title">AI回答:</label>
+       <br>
+       <br>
+       <h1>{{ myans }}</h1>
+       
+       <button type="submit">送出</button>
+    </form>
+</body>
